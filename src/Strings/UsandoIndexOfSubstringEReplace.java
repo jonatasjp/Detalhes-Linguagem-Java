@@ -1,6 +1,6 @@
 package Strings;
 
-public class Main {
+public class UsandoIndexOfSubstringEReplace {
 	
 	public static void main(String[] args) {
 		
@@ -18,4 +18,5 @@ public class Main {
 		System.out.println(nome.replace(nome.substring(nome.indexOf("luis"), nome.indexOf("nobre")), "FLAMENGUISTA "));
 		
 	}
+
 }
