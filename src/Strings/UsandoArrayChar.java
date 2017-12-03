@@ -5,6 +5,7 @@ public class UsandoArrayChar {
 	public static void main(String[] args) {
 		
 		//Atribuindo caracteres de uma string a um array de caracteres
+
 		char[] arrayChar = new char[7];
 		/*
 		 *O primeiro parametro representa a posição inicial do primeiro caractere a ser obtido na string
