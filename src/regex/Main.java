@@ -1,11 +1,14 @@
 package regex;
 
-public class Main {
+enum C { CANECO };
+
+public class Main{
 
 	public static void main(String[] args) {
 		
 		System.out.println(validateName("Jonatas"));
-		
+		int x = 5;
+		System.out.println("x = " + ++x);
 		
 	}
 	
