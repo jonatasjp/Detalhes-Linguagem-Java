@@ -5,6 +5,7 @@ import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Scanner;
 
 public class Main {
 
@@ -39,6 +40,8 @@ public class Main {
 		} else {
 			System.out.printf("%s does not exist%n", path);
 		}
+		
+		
 	}
 
 }
