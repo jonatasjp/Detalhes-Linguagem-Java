@@ -25,6 +25,13 @@ public class TrabalhandoComSet {
 			System.out.println(cor);
 		}
 		
+		for (String cor : sortedSetCores.headSet("branco")) {
+			System.out.println(cor);
+		}
+
+		for (String cor : sortedSetCores.tailSet("branco")) {
+			System.out.println(cor);
+		}
 	}
 
 	public static void imprimirColecaoSemDuplicacao(List<String> listaCores) {
