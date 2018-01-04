@@ -19,16 +19,23 @@ public class TrabalhandoComSet {
 		
 		imprimirColecaoSemDuplicacao(listaCores);
 		
+		imprimirColecaoSemDuplicacaoOrdenada(listaCores);
+	}
+
+	public static void imprimirColecaoSemDuplicacaoOrdenada(List<String> listaCores) {
 		SortedSet<String> sortedSetCores = new TreeSet<>(listaCores);
 		
+		System.out.println("imprimindo toda coleção:");
 		for (String cor : sortedSetCores) {
 			System.out.println(cor);
 		}
-		
+
+		System.out.println("imprimindo até o anterior ao especificado no método headSet:");
 		for (String cor : sortedSetCores.headSet("branco")) {
 			System.out.println(cor);
 		}
 
+		System.out.println("imprimindo do elemento especificado no metodo tailSet até o último do set:");
 		for (String cor : sortedSetCores.tailSet("branco")) {
 			System.out.println(cor);
 		}
