@@ -15,6 +15,11 @@ public class TrabalhandoComSet {
 		//criando uma lista a partir do array
 		List<String> listaCores = Arrays.asList(cores);
 		
+		imprimirColecaoSemDuplicacao(listaCores);
+		
+	}
+
+	public static void imprimirColecaoSemDuplicacao(List<String> listaCores) {
 		//removendo os elementos duplicados com o SET
 		Set<String> setCores = new HashSet<>(listaCores);
 		
@@ -22,6 +27,5 @@ public class TrabalhandoComSet {
 		for (String cor : setCores) {
 			System.out.println(cor);
 		}
-		
 	}
 }
