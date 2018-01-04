@@ -4,18 +4,26 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class TrabalhandoComSet {
 
 	public static void main(String[] args) {
 
 		//array com cores repetidas
-		String [] cores = {"azul", "verde", "branco", "azul", "branco", "verde", "azul"};
+		String [] cores = {"azul", "verde", "branco"};
 		
 		//criando uma lista a partir do array
 		List<String> listaCores = Arrays.asList(cores);
 		
 		imprimirColecaoSemDuplicacao(listaCores);
+		
+		SortedSet<String> sortedSetCores = new TreeSet<>(listaCores);
+		
+		for (String cor : sortedSetCores) {
+			System.out.println(cor);
+		}
 		
 	}
 
