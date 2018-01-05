@@ -14,6 +14,18 @@ public class TrabalhandoComMaps {
 		List<String> lista = 
 				Arrays.asList("AZUL", "VERMELHO", "BRANCO", "VERDE", "VERMELHO", "AZUL", "VERDE", "AZUL");
 	
+		popularMapa(mapaCoresQuantidade, lista);
+		imprimirMapa(mapaCoresQuantidade);
+	
+	}
+
+	public static void imprimirMapa(Map<String, Integer> mapaCoresQuantidade) {
+		for (String cor : mapaCoresQuantidade.keySet()) {
+			System.out.println("A cor: " +cor +" foi encontrada " +mapaCoresQuantidade.get(cor) +" vezes");
+		}
+	}
+
+	public static void popularMapa(Map<String, Integer> mapaCoresQuantidade, List<String> lista) {
 		for (String cor : lista) {
 			if(mapaCoresQuantidade.containsKey(cor)) {
 				mapaCoresQuantidade.put(cor, mapaCoresQuantidade.get(cor) + 1);
@@ -21,10 +33,5 @@ public class TrabalhandoComMaps {
 				mapaCoresQuantidade.put(cor, 1);
 			}
 		}
-		
-		for (String cor : mapaCoresQuantidade.keySet()) {
-			System.out.println("A cor: " +cor +" foi encontrada " +mapaCoresQuantidade.get(cor) +" vezes");
-		}
-	
 	}
 }
