@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
+import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class TrabalhandoComMaps {
@@ -17,10 +17,17 @@ public class TrabalhandoComMaps {
 				Arrays.asList("AZUL", "VERMELHO", "BRANCO", "VERDE", "VERMELHO", "AZUL", "VERDE", "AZUL");
 	
 		popularMapa(mapaCoresQuantidade, lista);
+
 		imprimirMapa(mapaCoresQuantidade);
 		
-		TreeSet<String> sortedKeys = new TreeSet<>(mapaCoresQuantidade.keySet());
+		imprimirMapaOrdenado(mapaCoresQuantidade);
+	
+	}
+
+	public static void imprimirMapaOrdenado(Map<String, Integer> mapaCoresQuantidade) {
+		SortedSet<String> sortedKeys = new TreeSet<>(mapaCoresQuantidade.keySet());
 		
+		System.out.println("--------------------------");
 		for (String cor : sortedKeys) {
 			System.out.println("A cor: " +cor +" foi encontrada " +mapaCoresQuantidade.get(cor) +" vezes");
 		}
