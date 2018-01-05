@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class TrabalhandoComMaps {
 
@@ -16,7 +18,12 @@ public class TrabalhandoComMaps {
 	
 		popularMapa(mapaCoresQuantidade, lista);
 		imprimirMapa(mapaCoresQuantidade);
-	
+		
+		TreeSet<String> sortedKeys = new TreeSet<>(mapaCoresQuantidade.keySet());
+		
+		for (String cor : sortedKeys) {
+			System.out.println("A cor: " +cor +" foi encontrada " +mapaCoresQuantidade.get(cor) +" vezes");
+		}
 	}
 
 	public static void imprimirMapa(Map<String, Integer> mapaCoresQuantidade) {
