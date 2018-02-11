@@ -10,8 +10,8 @@ public class Main {
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(new Date());
 		System.out.println(calendar);
-
-		if(Calendar.SUNDAY == calendar.getFirstDayOfWeek())
+		
+		if(calendar.get(Calendar.DAY_OF_WEEK) == calendar.getFirstDayOfWeek())
 			System.out.println("domingo");
 		
 		//obtendo o dia da semana
