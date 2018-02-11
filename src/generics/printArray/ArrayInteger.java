@@ -4,7 +4,7 @@ public class ArrayInteger {
 	
 	public static void main(String[] args) {
 		
-		PrintArrayGeneric<Integer> imprimirInteiros = new PrintArrayGeneric<Integer>();
+		PrintArrayGeneric<Integer> imprimirInteiros = new PrintArrayGeneric<>();
 		
 		Integer[] numeros = {1, 2, 3, 4, 5};
 		imprimirInteiros.imprimirArray(numeros);
