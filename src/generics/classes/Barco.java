@@ -1,6 +1,6 @@
 package generics.classes;
 
-public class Barco {
+public class Barco extends MeioDeTransporte{
 
 	private String nome;
 

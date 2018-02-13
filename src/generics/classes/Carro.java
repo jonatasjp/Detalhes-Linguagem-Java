@@ -1,6 +1,6 @@
 package generics.classes;
 
-public class Carro {
+public class Carro extends MeioDeTransporte{
 
 	private String nome;
 
