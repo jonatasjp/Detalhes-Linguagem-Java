@@ -34,7 +34,24 @@ public class LambdaTeste2 {
 		System.out.println(filtrados);
 		
 		System.out.println(filtrosComFunctionLambda(lista, (nome) -> filtrar(nome)));
+		System.out.println(filtrosComFunctionLambda2(lista, (nome) -> filtrar2(nome)));
 	}
+	
+	public static boolean filtrar2(String nome) {
+		return nome.equals("Jonatas") || nome.equals("André");
+	}
+	
+	public static <T> List<T> filtrosComFunctionLambda2(List<T> lista, Function<T, Boolean> function) {
+		List<T> listaFiltrada = new ArrayList<>();
+		
+		for(T t : lista) {
+			if(function.apply(t))
+				listaFiltrada.add(t);
+		}
+		
+		return listaFiltrada;
+	}
+
 
 	public static String filtrar(String nome) {
 		return nome.equals("Jonatas") || nome.equals("André") ? nome : null;
