@@ -19,9 +19,6 @@ public class LambdaTeste2 {
 		System.out.println(function.apply("andré"));
 		System.out.println(function.apply("joão"));
 		
-		Function<String, String> functionSt = nome -> new StringBuilder(nome).reverse().toString();
-		System.out.println(functionSt.apply("andré"));
-		
 		Function<String, String> function2 = (nome) -> reverse(nome);
 		System.out.println(function2.apply("andré"));
 		System.out.println(function2.apply("joão"));
@@ -37,36 +34,31 @@ public class LambdaTeste2 {
 		System.out.println(filtrados);
 		
 		System.out.println(filtrosComFunctionLambda(lista, (nome) -> filtrar(nome)));
-		System.out.println(filtrosComFunctionLambda2(lista, (nome) -> filtrar2(nome)));
+		System.out.println(filtrarLambda(lista, (nome) -> filtrar(nome)));
+		
 	}
 	
-	public static boolean filtrar2(String nome) {
+	public static boolean filtrar(String nome) {
 		return nome.equals("Jonatas") || nome.equals("André");
 	}
 	
-	public static <T> List<T> filtrosComFunctionLambda2(List<T> lista, Function<T, Boolean> function) {
+	public static <T> List<T> filtrarLambda(List<T> lista, Filtro<T, Boolean> function) {
 		List<T> listaFiltrada = new ArrayList<>();
 		
 		for(T t : lista) {
-			if(function.apply(t))
+			if(function.filtrar(t))
 				listaFiltrada.add(t);
 		}
 		
 		return listaFiltrada;
 	}
-
-
-	public static String filtrar(String nome) {
-		return nome.equals("Jonatas") || nome.equals("André") ? nome : null;
-	}
 	
-	public static <T> List<T> filtrosComFunctionLambda(List<T> lista, Function<T, T> function) {
+	public static <T> List<T> filtrosComFunctionLambda(List<T> lista, Function<T, Boolean> function) {
 		List<T> listaFiltrada = new ArrayList<>();
 		
 		for(T t : lista) {
-			T valor = function.apply(t);
-			if(valor != null)
-				listaFiltrada.add(valor);
+			if(function.apply(t))
+				listaFiltrada.add(t);
 		}
 		
 		return listaFiltrada;
