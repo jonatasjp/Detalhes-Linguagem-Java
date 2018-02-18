@@ -21,10 +21,14 @@ public class TestFiltrosGenericos {
 
 	private static <T> List<T> filtrarObjetos(List<T> lista, Predicate<T> predicate) {
 		List<T> filtrados = new ArrayList<>();
-		for (T objeto: lista) {
-			if (predicate.test(objeto))
+		lista.forEach( objeto -> {
+			if(predicate.test(objeto))
 				filtrados.add(objeto);
-		}
+		});
+//		for (T objeto: lista) {
+//			if (predicate.test(objeto))
+//				filtrados.add(objeto);
+//		}
 		return filtrados;
 	}
 	
