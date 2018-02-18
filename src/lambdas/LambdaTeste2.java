@@ -19,6 +19,9 @@ public class LambdaTeste2 {
 		System.out.println(function.apply("andré"));
 		System.out.println(function.apply("joão"));
 		
+		Function<String, String> functionSt = nome -> new StringBuilder(nome).reverse().toString();
+		System.out.println(functionSt.apply("andré"));
+		
 		Function<String, String> function2 = (nome) -> reverse(nome);
 		System.out.println(function2.apply("andré"));
 		System.out.println(function2.apply("joão"));
