@@ -20,6 +20,6 @@ public class OptionalTest3 {
 	}
 	
 	public static String obterNomeSeguradora(Optional<Pessoa> optionalPessoa) {
-		return optionalPessoa.flatMap(Pessoa::getCarro).flatMap(Carro::getSeguradora).map(Seguradora::getNome).orElse(null);
+		return optionalPessoa.flatMap(Pessoa::getCarro).flatMap(Carro::getSeguradora).map(Seguradora::getNome).orElse("NÃO EXISTE SEGURADORA");
 	}
 }

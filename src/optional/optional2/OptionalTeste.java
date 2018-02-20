@@ -20,7 +20,7 @@ public class OptionalTeste {
 	}
 
 	public static String obterNomeSeguradora(Optional<Pessoa> opPessoa) {
-		return opPessoa.map(Pessoa::getCarro).map(Carro::getSeguradora).map(Seguradora::getNome).orElse(null);
+		return opPessoa.map(Pessoa::getCarro).map(Carro::getSeguradora).map(Seguradora::getNome).orElse("NÃO EXISTE SEGURADORA");
 	}
 
 }
