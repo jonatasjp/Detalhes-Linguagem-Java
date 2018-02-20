@@ -8,7 +8,7 @@ public class OptionalTeste {
 
 		Pessoa p = new Pessoa();
 
-		System.out.println(obterNomeSeguradora(p));
+		System.out.println(obterNomeSeguradora(Optional.ofNullable(p)));
 
 		Carro c = new Carro();
 		p.setCarro(c);
@@ -16,14 +16,11 @@ public class OptionalTeste {
 		c.setSeguradora(s);
 		s.setNome("seguradora abc");
 
-		System.out.println(obterNomeSeguradora(p));
+		System.out.println(obterNomeSeguradora(Optional.ofNullable(p)));
 	}
 
-	public static String obterNomeSeguradora(Pessoa pessoa) {
-		Optional<Carro> opCarro = Optional.ofNullable(pessoa.getCarro());
-		Optional<Seguradora> opSeguradora = Optional.ofNullable(opCarro.orElse(new Carro()).getSeguradora());
-		
-		return opSeguradora.orElse(new Seguradora()).getNome();
+	public static String obterNomeSeguradora(Optional<Pessoa> opPessoa) {
+		return opPessoa.map(Pessoa::getCarro).map(Carro::getSeguradora).map(Seguradora::getNome).orElse(null);
 	}
 
 }

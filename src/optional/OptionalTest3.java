@@ -1,12 +1,14 @@
 package optional;
 
+import java.util.Optional;
+
 public class OptionalTest3 {
 
 	public static void main(String[] args) {
 		
 		Pessoa p = new Pessoa();
 		
-		System.out.println(obterNomeSeguradora(p));
+		System.out.println(obterNomeSeguradora(Optional.ofNullable(p)));
 		
 		Carro c = new Carro();
 		p.setCarro(c);
@@ -14,10 +16,10 @@ public class OptionalTest3 {
 		c.setSeguradora(s);
 		s.setNome("seguradora abc");
 		
-		System.out.println(obterNomeSeguradora(p));
+		System.out.println(obterNomeSeguradora(Optional.ofNullable(p)));
 	}
 	
-	public static String obterNomeSeguradora(Pessoa pessoa) {
-		return pessoa.getCarro().flatMap(Carro::getSeguradora).map(Seguradora::getNome).orElse(null);
+	public static String obterNomeSeguradora(Optional<Pessoa> optionalPessoa) {
+		return optionalPessoa.flatMap(Pessoa::getCarro).flatMap(Carro::getSeguradora).map(Seguradora::getNome).orElse(null);
 	}
 }
