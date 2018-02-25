@@ -35,9 +35,7 @@ public class ClasseAnonimaTest {
 			}
 		});
 		
-		carros.forEach(carro -> {
-			System.out.println(carro);
-		});
+		carros.forEach(System.out::println);
 	}
 	
 }
