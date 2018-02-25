@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.time.temporal.ChronoField;
 
-public class DateTimeTeste {
+public class LocalDateTeste {
 	
 	public static void main(String[] args) {
 		
