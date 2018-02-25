@@ -22,6 +22,14 @@ public class Main {
 		System.out.println(nome);
 		modificarValorStringPassandoString(nome);
 		System.out.println(nome);
+		
+		String a = "jonatas";
+		String b = "jonatas";
+		//true
+		System.out.println(a == b);
+		String c = new String("jonatas");
+		//false
+		System.out.println(b == c);
 	}
 
 	private static void modificarValorStringPassandoString(String nome) {
