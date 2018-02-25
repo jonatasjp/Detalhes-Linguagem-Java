@@ -41,15 +41,15 @@ public abstract class Animal {
 				animal.fazerBarulho();
 			}
 		}
-		
-		private static void fazerCachorrosFalarem(List<? super Cachorro> animaisList) {
-		}
-		
+
 //		private static void fazerAnimaisFazeremBarulho(List<Animal> animaisList) {
 //			for (Animal animal : animaisList) {
 //				animal.fazerBarulho();
 //			}
 //		}
+		
+		private static void fazerCachorrosFalarem(List<? super Cachorro> animaisList) {
+		}
 
 		private static void fazerAnimaisFazeremBarulho(Animal[] animais) {
 			for (Animal animal : animais) {
