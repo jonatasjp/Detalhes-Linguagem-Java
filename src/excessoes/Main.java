@@ -3,24 +3,20 @@ package excessoes;
 public class Main {
 	
 	public static void main(String[] args) {
-		try {
-			a();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		a();
 	}
 
-	private static void a() throws Exception {
+	private static void a() {
 		System.out.println("A EXECUTADO");
 		b();
 	}
 
-	private static void b() throws Exception {
+	private static void b() {
 		System.out.println("B EXECUTADO");
 		c();
 	}
 
-	private static void c() throws Exception {
+	private static void c() {
 		System.out.println("C EXECUTADO");
 		d();
 	}
