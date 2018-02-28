@@ -3,6 +3,7 @@ package datas.dateTimeAPI;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.temporal.ChronoField;
+import java.time.temporal.TemporalAdjusters;
 
 public class LocalDateTeste {
 	
@@ -16,6 +17,25 @@ public class LocalDateTeste {
 		
 		obtendoValoresRelativosAAnoMesEDia();
 		
+		realizandoParseDeStringParaLocalDate();
+		
+		obtendoDataInicialEFinalDeUmDeterminadoMes();
+		
+	}
+
+	public static void obtendoDataInicialEFinalDeUmDeterminadoMes() {
+		LocalDate initial = LocalDate.of(2018, 2, 25);
+//		LocalDate inicio = initial.withDayOfMonth(1);
+//		LocalDate fim = initial.withDayOfMonth(initial.lengthOfMonth());
+		LocalDate inicio = initial.with(TemporalAdjusters.firstDayOfMonth());
+		LocalDate fim = initial.with(TemporalAdjusters.lastDayOfMonth());
+		System.out.println(inicio);
+		System.out.println(fim);
+	}
+
+	public static void realizandoParseDeStringParaLocalDate() {
+		LocalDate localDateParseado = LocalDate.parse("2018-02-21");
+		System.out.println(localDateParseado);
 	}
 
 	public static void obtendoValoresRelativosAAnoMesEDia() {
