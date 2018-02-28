@@ -47,5 +47,14 @@ public class TemporalAdjustersTeste {
 		date = date.with(TemporalAdjusters.firstDayOfNextYear());
 		System.out.println(date);
 		System.out.println(date.getDayOfWeek());
+		
+		date = date.with(new ObterProximoDiaUtil());
+		System.out.println(date);
+		System.out.println(date.getDayOfWeek());
+		
+		date = date.with(new ObterProximoDiaUtil());
+		System.out.println(date);
+		System.out.println(date.getDayOfWeek());
+		
 	}
 }
