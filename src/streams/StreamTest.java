@@ -26,6 +26,22 @@ public class StreamTest {
 			.filter( (pessoa) -> pessoa.getSalario() > 4000)
 			.sorted(Comparator.comparing(Pessoa::getSalario))
 			.collect(Collectors.toList()) );
+
+		//Contando quantidade de pessoas com idade maior que 30 anos
+		System.out.println(pessoas
+				.stream()
+				.filter( pessoa -> pessoa.getIdade() > 25)
+				.count());
 		
+		//Contando quantidade de pessoas com idade maior que 25 anos
+		//com o uso do distinct as pessoas iguais(equals e hashcode) só serão contadas uma única vez
+		System.out.println(pessoas
+				.stream()
+				.distinct()
+				.filter( pessoa -> pessoa.getIdade() > 25)
+				.count());
+		
+		//imprimindo a lista
+		pessoas.stream().forEach(System.out::println);
 	}
 }
