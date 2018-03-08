@@ -16,9 +16,15 @@ public class Pessoa implements Comparable<Pessoa>{
 	}
 
 	public static List<Pessoa> bancoDePessoas() {
-		return Arrays.asList(new Pessoa("jonatas", 24, 2200d), new Pessoa("andré", 18, 5000d),
-				new Pessoa("joão", 50, 2000d), new Pessoa("caio", 32, 5500d), new Pessoa("fabio", 29, 3200d),
-				new Pessoa("bruce wayne", 35, 50000d), new Pessoa("bary allen", 28, 3000d),
+		return Arrays.asList(
+				new Pessoa("jonatas", 24, 2200d), 
+				new Pessoa("andré", 18, 5000d),
+				new Pessoa("joão", 50, 2000d), 
+				new Pessoa("caio", 32, 5500d), 
+				new Pessoa("fabio", 29, 3200d),
+				new Pessoa("fabio", 29, 3200d),
+				new Pessoa("bruce wayne", 35, 50000d), 
+				new Pessoa("bary allen", 28, 3000d),
 				new Pessoa("oliver queen", 33, 4500d));
 	}
 
@@ -54,6 +60,31 @@ public class Pessoa implements Comparable<Pessoa>{
 	@Override
 	public int compareTo(Pessoa o) {
 		return this.getNome().compareTo(o.getNome());
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pessoa other = (Pessoa) obj;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		return true;
 	}
 
 }
