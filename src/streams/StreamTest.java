@@ -43,5 +43,18 @@ public class StreamTest {
 		
 		//imprimindo a lista
 		pessoas.stream().forEach(System.out::println);
+		
+		//obtendo a stream, filtrando pelas pessoas com idadde maior que 29, 
+		//ordenando pelo nome, limitando a 3 registros e ignorando(skip) o primeiro registro
+		//obtendo o stream de string com o nome das pessoas filtradas e 
+		//gerando uma lista de string com os nomes.
+		System.out.println( 
+		pessoas.stream()
+			.filter( pessoa -> pessoa.getIdade() > 29)
+			.sorted(Comparator.comparing(Pessoa::getNome))
+			.limit(3)
+			.skip(1)
+			.map(Pessoa::getNome)
+			.collect(Collectors.toList()));
 	}
 }
