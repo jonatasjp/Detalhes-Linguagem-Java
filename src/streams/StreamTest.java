@@ -56,5 +56,19 @@ public class StreamTest {
 			.skip(1)
 			.map(Pessoa::getNome)
 			.collect(Collectors.toList()));
+
+		//filtrando pessoas com idade maior que 22 e com salário maior que 5000, ordenando pelo nome e limitando a 2
+		System.out.println(pessoas.stream()
+				.filter( p -> p.getIdade() > 22 && p.getSalario() > 5000)
+				.sorted(Comparator.comparing(Pessoa::getNome))
+				.limit(2)
+				.collect(Collectors.toList()));
+		
+		//Obtendo os nomes das pessoas com idade menor que 22, comparando pelo nome
+		System.out.println(pessoas.stream()
+				.filter(p -> p.getIdade() < 22)
+				.sorted(Comparator.comparing(Pessoa::getNome))
+				.map( p -> p.getNome())
+				.collect(Collectors.toList()));
 	}
 }
