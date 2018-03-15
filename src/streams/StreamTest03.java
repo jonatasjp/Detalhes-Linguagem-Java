@@ -54,6 +54,7 @@ public class StreamTest03 {
 				.sum());
 		
 		//Criando um stream especializado e depois retornando ao stream normal
+		streamPessoas = Pessoa.bancoDePessoas().stream();
 		DoubleStream doubleStream = streamPessoas.filter( p -> p.getSalario() > 4000).mapToDouble(Pessoa::getSalario);
 		Stream<Double> streamOriginal = doubleStream.boxed();
 	}
