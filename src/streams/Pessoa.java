@@ -8,24 +8,34 @@ public class Pessoa implements Comparable<Pessoa>{
 	private String nome;
 	private Integer idade;
 	private Double salario;
+	private Genero genero;
 
 	public Pessoa(String nome, Integer idade, Double salario) {
 		this.nome = nome;
 		this.idade = idade;
 		this.salario = salario;
 	}
+	
+	public Pessoa(String nome, Integer idade, Double salario, Genero genero) {
+		this.nome = nome;
+		this.idade = idade;
+		this.salario = salario;
+		this.genero = genero;
+	}
 
 	public static List<Pessoa> bancoDePessoas() {
 		return Arrays.asList(
-				new Pessoa("jonatas", 24, 2200d), 
-				new Pessoa("andré", 18, 5000d),
-				new Pessoa("joão", 50, 2000d), 
-				new Pessoa("caio", 32, 5500d), 
-				new Pessoa("fabio", 29, 3200d),
-				new Pessoa("fabio", 29, 3200d),
-				new Pessoa("bruce wayne", 35, 50000d), 
-				new Pessoa("bary allen", 28, 3000d),
-				new Pessoa("oliver queen", 33, 4500d));
+				new Pessoa("jonatas", 24, 2200d, Genero.MASCULINO), 
+				new Pessoa("andré", 17, 5000d, Genero.MASCULINO),
+				new Pessoa("joão", 50, 2000d, Genero.MASCULINO), 
+				new Pessoa("caio", 32, 5500d, Genero.MASCULINO), 
+				new Pessoa("fabio", 29, 3200d, Genero.MASCULINO),
+				new Pessoa("fabio", 29, 3200d, Genero.MASCULINO),
+				new Pessoa("bruce wayne", 35, 50000d, Genero.MASCULINO), 
+				new Pessoa("bary allen", 28, 3000d, Genero.MASCULINO),
+				new Pessoa("oliver queen", 33, 4500d, Genero.MASCULINO),
+				new Pessoa("Railda", 51, 3000d, Genero.FEMININO),
+				new Pessoa("Keren", 16, 2000d, Genero.FEMININO));
 	}
 
 	public String getNome() {
@@ -50,6 +60,14 @@ public class Pessoa implements Comparable<Pessoa>{
 
 	public void setSalario(Double salario) {
 		this.salario = salario;
+	}
+	
+	public Genero getGenero() {
+		return genero;
+	}
+
+	public void setGenero(Genero genero) {
+		this.genero = genero;
 	}
 
 	@Override
