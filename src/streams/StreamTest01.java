@@ -27,6 +27,7 @@ public class StreamTest01 {
 		System.out.println(
 				palavras.stream().map( palavra -> palavra.split("")).flatMap(Arrays::stream).collect(Collectors.toList()));
 		
+		palavras.stream().map(lista -> lista.split("")).flatMap(streamArrayString -> Arrays.stream(streamArrayString)).forEach(System.out::println);;
 		
 		System.out.println(palavras.stream().map(palavra -> palavra.length()).flatMapToInt( quantidade -> IntStream.of(quantidade)).sum());
 		
