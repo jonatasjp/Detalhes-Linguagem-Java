@@ -21,6 +21,7 @@ public class UsandoStringBuilder {
 		
 		buffer3.append(" world"); //concatenação de stringbuilder
 		System.out.println(buffer3);
-		
+
+		System.out.println(new StringBuilder("jonatas").delete(2, 3));
 	}
 }

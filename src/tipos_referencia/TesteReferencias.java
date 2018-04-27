@@ -26,6 +26,7 @@ public class TesteReferencias {
 		c = b;
 		System.out.println(carros.c1);
 		System.out.println(c);
+		
 	}
 
 }
